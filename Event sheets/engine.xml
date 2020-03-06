@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>engine</name>
+    <events>
+        <event-block sid="448188998285704">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="321476624717061" type="System" />
+            </conditions>
+            <actions>
+                <action id="-22" name="Set angle toward position" sid="279493889293318" type="Canhao2">
+                    <param id="0" name="X">Mouse.X</param>
+                    <param id="1" name="Y">Mouse.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="198579623860296">
+            <conditions>
+                <condition id="1" name="On any click" sid="852061991388736" type="Mouse" />
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="883342041114451" type="Canhao2">
+                    <param id="0" name="Object">Sprite</param>
+                    <param id="1" name="Layer">&quot;main&quot;</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action behavior="Physics" id="5" name="Apply impulse at angle" sid="795698099875557" type="Sprite">
+                    <param id="0" name="Impulse">distance(Canhao2.X,Canhao2.Y,Mouse.X,Mouse.Y)/15</param>
+                    <param id="1" name="Angle">Canhao2.Angle</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="196275465328711">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="495573994957724" type="Sprite">
+                    <param id="0" name="Object">Caixas</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="358761562203340" type="Caixas" />
+            </actions>
+        </event-block>
+        <event-block sid="359549076587058">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="956277892650822" type="Caixas" />
+            </conditions>
+            <actions>
+                <action id="1" name="Set rate" sid="849449015261673" type="Particles">
+                    <param id="0" name="Rate">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
